@@ -14,11 +14,11 @@ stages:
    jobs:
     - job: Executeterraformtask
       steps:
-      - task: TerraformInstaller@1
+      - task: TerraformInstaller@2
         inputs:
           terraformVersion: 'latest'
       - script:
         terraform init
         terraform validate
         terraform plan
-      displayName: 'Run Terraform Commands'
+        displayName: 'Run Terraform Commands'

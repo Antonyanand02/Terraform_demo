@@ -21,3 +21,4 @@ stages:
         terraform init
         terraform validate
         terraform plan
+      displayName: 'Run Terraform Commands'

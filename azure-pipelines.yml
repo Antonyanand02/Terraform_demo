@@ -10,15 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
- - stage: Executeasetoftask
-   jobs:
-    - job: Executeterraformtask
-      steps:
-      - task: TerraformInstaller@2
-        inputs:
-          terraformVersion: 'latest'
-      - script:
-        terraform init
-        terraform validate
-        terraform plan
-        displayName: 'Run Terraform Commands'
+  - stage: Executeasetoftask
+    jobs:
+      - job: Executeterraformtask
+        steps:
+          - task: TerraformInstaller@2
+            inputs:
+              terraformVersion: 'latest'
+          - script: |
+              terraform init
+              terraform validate
+              terraform plan
+            displayName: 'Run Terraform Commands'
+

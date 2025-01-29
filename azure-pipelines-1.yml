@@ -14,7 +14,7 @@ stages:
     jobs:
       - job: Executeterraformtask
         steps:
-          - task: TerraformInstaller@1
+          - task: TerraformInstaller@2
             inputs:
               terraformVersion: 'latest'
           - script: |

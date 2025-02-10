@@ -1,0 +1,19 @@
+trigger:
+- Pipeline
+
+pool:
+  vmImage: 'windows-latest'
+
+stages:
+  - stage: Executeasetoftask
+    jobs:
+      - job: Executeterraformtask
+        steps:
+          - task: TerraformInstaller@1
+            inputs:
+              terraformVersion: 'latest'
+          - script: |
+              terraform init
+              terraform validate
+#              terraform plan
+            displayName: 'Run Terraform Commands'

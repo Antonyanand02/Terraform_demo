@@ -15,5 +15,5 @@ stages:
           - script: |
               terraform init
               terraform validate
-#              terraform plan
+              terraform plan
             displayName: 'Run Terraform Commands'
